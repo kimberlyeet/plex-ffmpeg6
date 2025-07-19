@@ -33,13 +33,9 @@ RUN \
     udev \
     wget && \
   echo "**** install plex ****" && \
-  if [ -z ${PLEX_RELEASE+x} ]; then \
-    PLEX_RELEASE=$(curl -sX GET 'https://plex.tv/api/downloads/5.json' \
-    | jq -r '.computer.Linux.version'); \
-  fi && \
   curl -o \
     /tmp/plexmediaserver.deb -L \
-    "${PLEX_DOWNLOAD}/${PLEX_RELEASE}/debian/plexmediaserver_${PLEX_RELEASE}_${PLEX_ARCH}.deb" && \
+    "https://artifacts.plex.tv/plex-media-server-experimental/1.41.8.9914-1d735f17b/debian/plexmediaserver_1.41.8.9914-1d735f17b_amd64.deb" && \
   dpkg -i /tmp/plexmediaserver.deb && \
   echo "**** ensure abc user's home folder is /app ****" && \
   usermod -d /app abc && \
