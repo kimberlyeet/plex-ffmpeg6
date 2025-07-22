@@ -35,7 +35,7 @@ RUN \
   echo "**** install plex ****" && \
   curl -o \
     /tmp/plexmediaserver.deb -L \
-    "https://artifacts.plex.tv/plex-media-server-experimental/1.41.8.9914-1d735f17b/debian/plexmediaserver_1.41.8.9914-1d735f17b_amd64.deb" && \
+    "https://artifacts.plex.tv/plex-media-server-experimental/1.42.0.10006-6b8dab7d0/debian/plexmediaserver_1.42.0.10006-6b8dab7d0_amd64.deb" && \
   dpkg -i /tmp/plexmediaserver.deb && \
   echo "**** ensure abc user's home folder is /app ****" && \
   usermod -d /app abc && \
